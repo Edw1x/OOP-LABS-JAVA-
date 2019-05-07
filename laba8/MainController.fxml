@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="757.0" prefWidth="878.0" style="-fx-background-color: #C70039;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guidemo.MainController">
+   <children>
+      <Button layoutX="472.0" layoutY="704.0" mnemonicParsing="false" onAction="#deleteAlbumButton" prefHeight="35.0" prefWidth="389.0" style="-fx-border-color: #C70039; -fx-background-color: #900C3F; -fx-background-insets: 0; -fx-border-radius: 20; -fx-border-width: 2;" text="Delete Album" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <effect>
+            <Bloom threshold="0.54" />
+         </effect></Button>
+      <Button layoutX="14.0" layoutY="704.0" mnemonicParsing="false" onAction="#newAlbumButton" prefHeight="35.0" prefWidth="421.0" style="-fx-border-color: #C70039; -fx-background-color: #900C3F; -fx-background-insets: 0; -fx-border-radius: 20; -fx-border-width: 2;" text="Add Album" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <effect>
+            <Bloom threshold="0.54" />
+         </effect></Button>
+      <TextField fx:id="nameTextField" alignment="CENTER" layoutX="14.0" layoutY="621.0" prefHeight="33.0" prefWidth="132.0" promptText="Name" style="-fx-border-color: #900C3F; -fx-background-color: #C70039; -fx-background-insets: 0; -fx-border-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect></TextField>
+      <TextField fx:id="genreTextField" alignment="CENTER" layoutX="156.0" layoutY="621.0" prefHeight="33.0" prefWidth="132.0" promptText="Genre" style="-fx-border-color: #900C3F; -fx-background-color: #C70039; -fx-background-insets: 0; -fx-border-radius: 20; -fx-border-width: 2;">
+        <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect></TextField>
+      <DatePicker fx:id="dateTextField" layoutX="163.0" layoutY="663.0" prefHeight="33.0" prefWidth="548.0" promptText="Date" style="-fx-border-color: #900C3F; -fx-background-color: #C70039; -fx-background-insets: 0; -fx-border-radius: 1; -fx-border-width: 4;">
+         <effect>
+            <Bloom threshold="1.0" />
+         </effect></DatePicker>
+      <TableView fx:id="tableView" layoutX="5.0" layoutY="40.0" prefHeight="536.0" prefWidth="863.0" style="-fx-background-color: #900C3F; -fx-border-color: #581845; -fx-background-insets: 0; -fx-border-width: 3;">
+        <columns>
+          <TableColumn fx:id="nameColumn" onEditCommit="#changeName" prefWidth="95.0" style="-fx-border-color: #900C3F; -fx-background-color: #ff5733;" text="Name" />
+          <TableColumn fx:id="genreColumn" onEditCommit="#changeGenre" prefWidth="95.0" style="-fx-border-color: #900C3F; -fx-background-color: #ff5733;" text="Genre" />
+            <TableColumn fx:id="peformerColumn" onEditCommit="#changePeformer" prefWidth="95.0" style="-fx-border-color: #900C3F; -fx-background-color: #ff5733;" text="Peformer" />
+            <TableColumn fx:id="dateColumn" prefWidth="95.0" style="-fx-border-color: #900C3F; -fx-background-color: #ff5733;" text="Date" />
+            <TableColumn fx:id="descriptionColumn" onEditCommit="#changeDescription" prefWidth="95.0" style="-fx-border-color: #900C3F; -fx-background-color: #ff5733;" text="Description" />
+            <TableColumn fx:id="durationColumn" onEditCommit="#changeDuration" prefWidth="95.0" style="-fx-border-color: #900C3F; -fx-background-color: #ff5733;" text="Duration" />
+            <TableColumn fx:id="typeColumn" onEditCommit="#changeType" prefWidth="95.0" style="-fx-border-color: #900C3F; -fx-background-color: #ff5733;" text="Type" />
+            <TableColumn fx:id="contestColumn" onEditCommit="#changeContest" prefWidth="95.0" style="-fx-border-color: #900C3F; -fx-background-color: #ff5733;" text="Contest" />
+            <TableColumn fx:id="placeColumn" onEditCommit="#changePlace" prefWidth="95.0" style="-fx-border-color: #900C3F; -fx-background-color: #ff5733;" text="Place" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" prefHeight="41.0" prefWidth="878.0" style="-fx-border-color: #900C3F; -fx-background-color: #C70039; -fx-background-insets: 0; -fx-border-radius: 0; -fx-border-width: 2;" text="Albums Saver" textFill="#ff5733">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+         <effect>
+            <Bloom threshold="0.39" />
+         </effect>
+      </Label>
+      <TextField fx:id="peformerTextField" alignment="CENTER" layoutX="295.0" layoutY="621.0" prefHeight="33.0" prefWidth="132.0" promptText="Peformer" style="-fx-border-color: #900C3F; -fx-background-color: #C70039; -fx-background-insets: 0; -fx-border-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect></TextField>
+      <TextField fx:id="descriptionTextField" alignment="CENTER" layoutX="732.0" layoutY="621.0" prefHeight="33.0" prefWidth="132.0" promptText="Description" style="-fx-border-color: #900C3F; -fx-background-color: #C70039; -fx-background-insets: 0; -fx-border-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect></TextField>
+      <TextField fx:id="contestTextField" alignment="CENTER" layoutX="437.0" layoutY="621.0" prefHeight="33.0" prefWidth="132.0" promptText="Contest" style="-fx-border-color: #900C3F; -fx-background-color: #C70039; -fx-background-insets: 0; -fx-border-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect></TextField>
+      <TextField fx:id="placeTextField" alignment="CENTER" layoutX="14.0" layoutY="662.0" prefHeight="33.0" prefWidth="132.0" promptText="Place" style="-fx-border-color: #900C3F; -fx-background-color: #C70039; -fx-background-insets: 0; -fx-border-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect></TextField>
+      <TextField fx:id="typeTextField" alignment="CENTER" layoutX="732.0" layoutY="662.0" prefHeight="33.0" prefWidth="132.0" promptText="Type" style="-fx-border-color: #900C3F; -fx-background-color: #C70039; -fx-background-insets: 0; -fx-border-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect></TextField>
+      <TextField fx:id="durationTextField" alignment="CENTER" layoutX="581.0" layoutY="621.0" prefHeight="33.0" prefWidth="132.0" promptText="Duration" style="-fx-border-color: #900C3F; -fx-background-color: #C70039; -fx-background-insets: 0; -fx-border-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect></TextField>
+      <MenuBar fx:id="fileMenu" layoutX="17.0" layoutY="584.0" prefHeight="31.0" prefWidth="844.0" style="-fx-border-color: #900C3F; -fx-background-color: #C70039; -fx-background-insets: 0; -fx-border-radius: 20; -fx-border-width: 3;">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleSave" text="Save" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Exit" />
+               </items>
+            </Menu>
+         </menus>
+         <effect>
+            <Bloom threshold="0.22" />
+         </effect>
+      </MenuBar>
+   </children>
+   <effect>
+      <SepiaTone level="0.2" />
+   </effect>
+</AnchorPane>
